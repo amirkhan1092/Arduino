@@ -1,0 +1,27 @@
+# servo motor with ESP8266
+
+
+
+#include <Servo.h>
+
+Servo mys;  
+
+
+
+void setup() {
+  mys.attach(2); // choose pin 2 
+}
+ int p;
+void loop() {
+ 
+  for (p = 0; p <= 180; p += 1) 
+  { 
+    mys.write(p);              // servo move at position 
+    delay(10);                       // wait 10 sec for servo response 
+  }
+  for (p = 180; p >= 0; p -= 1) 
+  { // reverse
+    mys.write(p);              
+    delay(10);                        
+  }
+}
